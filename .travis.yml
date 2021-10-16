@@ -5,8 +5,4 @@ services:
 
 before_install:
   - docker build -t nob786/eatsabytee ./microservices/auth-service
-
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
-  - docker push nob786/eatsabytee
+  - docker run -d -p 4000:4000 nob786/eatsabytee

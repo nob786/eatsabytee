@@ -6,3 +6,6 @@ services:
 before_install:
   - docker build -t nob786/eatsabytee ./microservices/auth-service
   - docker run -d -p 4000:4000 nob786/eatsabytee
+
+script:
+  - bundle exec rake test

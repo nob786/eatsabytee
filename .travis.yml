@@ -5,11 +5,3 @@ services:
 
 before_install:
   - docker build -t nob786/eatsabytee ./microservices/client
-
-script:
-  - docker run nob786/eatsabytee npm start
-
-after_success:
-  - echo "\$DOCKER_PASSWORD" | docker login -u "\$DOCKER_ID" ==password-stdin
-
-  - docker push nob786/eatsabytee
